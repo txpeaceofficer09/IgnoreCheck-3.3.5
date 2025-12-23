@@ -4,6 +4,8 @@ local function IsOnIgnore(name)
 	local i = 1
 
 	while GetIgnoreName(i) ~= nil do
+		printmsg("Checking "..GetIgnoreName(i).." ? "..name)
+
 		if GetIgnoreName(i) == name then
 			return true
 		end
