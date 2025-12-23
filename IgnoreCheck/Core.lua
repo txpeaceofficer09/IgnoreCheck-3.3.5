@@ -18,13 +18,13 @@ local function OnEvent(self, event, ...)
 	if numRaid > 0 then
 		for i=1,numRaid,1 do
 			if IsOnIgnore(UnitName("raid"..i)) then
-				print(("[|cffffaa00IgnoreCheck|r]: %s is on your ingore list."):format(UnitName("raid"..i))
+				print(("[|cffffaa00IgnoreCheck|r]: %s is on your ingore list."):format(UnitName("raid"..i)))
 			end
 		end
 	elseif numParty > 0 then
 		for i=1,numRaid,1 do
 			if IsOnIgnore(UnitName("party"..i)) then
-				print(("[|cffffaa00IgnoreCheck|r]: %s is on your ignore list."):format(UnitName("party"..i))
+				print(("[|cffffaa00IgnoreCheck|r]: %s is on your ignore list."):format(UnitName("party"..i)))
 			end
 		end
 	end
