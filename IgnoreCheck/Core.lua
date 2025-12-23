@@ -22,7 +22,7 @@ local function OnEvent(self, event, ...)
 			memberName = UnitName("raid"..i)
 
 			if IsOnIgnore(memberName) then
-				print(("[|cffffaaffIgnoreCheck|r]: %s is on your ingore list."):format(memberName))
+				print(("[|cffffaaffIgnoreCheck|r]: |cfff0000|TInterface\\TargetingFrame\\UI-RaidTargetingIcons:0:0:0:0:64:64:48:64:16:32|t%s|TInterface\\TargetingFrame\\UI-RaidTargetingIcons:0:0:0:0:64:64:48:64:16:32|t is on your ingore list.|r"):format(memberName))
 			end
 		end
 	elseif numParty > 0 then
@@ -30,7 +30,7 @@ local function OnEvent(self, event, ...)
 			memberName = UnitName("party"..i)
 
 			if IsOnIgnore(memberName) then
-				print(("[|cffffaaffIgnoreCheck|r]: %s is on your ignore list."):format(memberName))
+				print(("[|cffffaaffIgnoreCheck|r]: |cffff0000|TInterface\\TargetingFrame\\UI-RaidTargetingIcons:0:0:0:0:64:64:48:64:16:32|t%s|TInterface\\TargetingFrame\\UI-RaidTargetingIcons:0:0:0:0:64:64:48:64:16:32|t is on your ignore list.|r"):format(memberName))
 			end
 		end
 	end
