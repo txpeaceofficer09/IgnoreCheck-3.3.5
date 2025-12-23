@@ -1,14 +1,10 @@
 local f = CreateFrame("Frame")
 
 local function IsOnIgnore(name)
-	local i = 1
-
-	while GetIgnoreName(i) ~= "Unknown" do
+	for i=1,50,1 do
 		if GetIgnoreName(i) == name then
 			return true
 		end
-
-		i = i + 1
 	end
 
 	return false
