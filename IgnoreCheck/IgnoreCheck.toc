@@ -1,0 +1,5 @@
+## Interface: 30300
+## Title: IgnoreCheck
+## Author: SoonBeSteak
+## Notes: Check party/raid members and alert you if any are on your ignore list.
+Core.lua
