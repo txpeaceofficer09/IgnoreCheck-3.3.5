@@ -3,9 +3,7 @@ local f = CreateFrame("Frame")
 local function IsOnIgnore(name)
 	local i = 1
 
-	while GetIgnoreName(i) ~= nil do
-		printmsg("Checking "..GetIgnoreName(i).." ? "..name)
-
+	while GetIgnoreName(i) ~= "Unknown" do
 		if GetIgnoreName(i) == name then
 			return true
 		end
