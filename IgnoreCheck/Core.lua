@@ -2,7 +2,7 @@ local f = CreateFrame("Frame")
 
 local function IsOnIgnore(name)
 	for i=1,50,1 do
-		printmsg("Checking "..name.." against "..GetIgnoreName(i))
+		print("Checking "..name.." against "..GetIgnoreName(i))
 
 		if GetIgnoreName(i) == name then
 			return true
@@ -12,12 +12,8 @@ local function IsOnIgnore(name)
 	return false
 end
 
-local function printmsg(msg)
-	print(("[|cffaaffIgnoreCheck|r]: %s"):format(msg))
-end
-
 local function OnEvent(self, event, ...)
-	printmsg(event)
+	print(event)
 
 	local numParty, numRaid = GetNumPartyMembers(), GetNumRaidMembers()
 	local memberName = nil
@@ -27,8 +23,7 @@ local function OnEvent(self, event, ...)
 			memberName = UnitName("raid"..i)
 
 			if IsOnIgnore(memberName) then
-				--print(("[|cffffaa00IgnoreCheck|r]: %s is on your ingore list."):format(memberName))
-				printmsg(memberName.." is on your ignore list.")
+				print(("[|cffffaaffIgnoreCheck|r]: %s is on your ingore list."):format(memberName))
 			end
 		end
 	elseif numParty > 0 then
@@ -36,8 +31,7 @@ local function OnEvent(self, event, ...)
 			memberName = UnitName("party"..i)
 
 			if IsOnIgnore(memberName) then
-				--print(("[|cffffaa00IgnoreCheck|r]: %s is on your ignore list."):format(memberName))
-				printmsg(memberName.." is on your ignore list.")
+				print(("[|cffffaaffIgnoreCheck|r]: %s is on your ignore list."):format(memberName))
 			end
 		end
 	end
