@@ -2,6 +2,8 @@ local f = CreateFrame("Frame")
 
 local function IsOnIgnore(name)
 	for i=1,50,1 do
+		printmsg("Checking "..name.." against "..GetIgnoreName(i))
+
 		if GetIgnoreName(i) == name then
 			return true
 		end
@@ -15,6 +17,8 @@ local function printmsg(msg)
 end
 
 local function OnEvent(self, event, ...)
+	printmsg(event)
+
 	local numParty, numRaid = GetNumPartyMembers(), GetNumRaidMembers()
 	local memberName = nil
 
