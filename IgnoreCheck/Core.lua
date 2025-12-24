@@ -13,6 +13,16 @@ local function IsOnIgnore(name)
 	return false
 end
 
+local function ignoreAlert(name)
+	local skull = "|TInterface\\TargetingFrame\\UI-RaidTargetingIcons:0:0:0:0:64:64:48:64:16:32|t"
+	local rw = ("%s%s%s is on your ignore list"):format(skull, name, skull)
+	local msg = ("[|cffffaaffIngoreCheck|r]: %s|cffffaa00%s|r%s is on your ignore list."):format(skull, name, skull)
+
+	print(msg)
+	RaidNotice_AddMessage(RaidWarningFrame, rw, ChatTypeInfo["RAID_WARNING"])
+	PlaySound(8959, "Master")
+end
+
 local function OnEvent(self, event, ...)
 	local numParty, numRaid = GetNumPartyMembers(), GetNumRaidMembers()
 	local memberName = nil
@@ -22,7 +32,8 @@ local function OnEvent(self, event, ...)
 			memberName = UnitName("raid"..i)
 
 			if IsOnIgnore(memberName) then
-				print(("[|cffffaaffIgnoreCheck|r]: |cfff0000|TInterface\\TargetingFrame\\UI-RaidTargetingIcons:0:0:0:0:64:64:48:64:16:32|t%s|TInterface\\TargetingFrame\\UI-RaidTargetingIcons:0:0:0:0:64:64:48:64:16:32|t is on your ingore list.|r"):format(memberName))
+				--print(("[|cffffaaffIgnoreCheck|r]: |cfff0000|TInterface\\TargetingFrame\\UI-RaidTargetingIcons:0:0:0:0:64:64:48:64:16:32|t%s|TInterface\\TargetingFrame\\UI-RaidTargetingIcons:0:0:0:0:64:64:48:64:16:32|t is on your ingore list.|r"):format(memberName))
+				ignoreAlert(memberName)
 			end
 		end
 	elseif numParty > 0 then
@@ -30,7 +41,8 @@ local function OnEvent(self, event, ...)
 			memberName = UnitName("party"..i)
 
 			if IsOnIgnore(memberName) then
-				print(("[|cffffaaffIgnoreCheck|r]: |cffff0000|TInterface\\TargetingFrame\\UI-RaidTargetingIcons:0:0:0:0:64:64:48:64:16:32|t%s|TInterface\\TargetingFrame\\UI-RaidTargetingIcons:0:0:0:0:64:64:48:64:16:32|t is on your ignore list.|r"):format(memberName))
+				--print(("[|cffffaaffIgnoreCheck|r]: |cffff0000|TInterface\\TargetingFrame\\UI-RaidTargetingIcons:0:0:0:0:64:64:48:64:16:32|t%s|TInterface\\TargetingFrame\\UI-RaidTargetingIcons:0:0:0:0:64:64:48:64:16:32|t is on your ignore list.|r"):format(memberName))
+				ignoreAlert(memberName)
 			end
 		end
 	end
