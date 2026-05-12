@@ -2,4 +2,6 @@
 ## Title: IgnoreCheck
 ## Author: SoonBeSteak
 ## Notes: Check party/raid members and alert you if any are on your ignore list.
+## Version: 1.0.0
+## Author: SoonBeSteak
 Core.lua
